@@ -1,0 +1,245 @@
+event_id,timestamp,host_id,host_type,site,severity,category,description,is_precursor,related_failure_type,acknowledged,ack_time_min
+EV01186,2024-10-01 11:11:04,RB-GUA-002,Router,Hojancha,Average,Performance,NTP sync drift,False,,True,
+EV01143,2024-10-01 23:03:24,AP-GUA-020,AccessPoint,Nicoya,Warning,Performance,ARP table overflow warning,False,,False,35
+EV01069,2024-10-02 10:11:45,AP-GUA-020,AccessPoint,Nicoya,Warning,Connectivity,NTP sync drift,False,,True,64
+EV01235,2024-10-02 13:27:54,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Performance,ICMP ping check recovered,False,,True,27
+EV01185,2024-10-02 16:57:24,RB-GUA-002,Router,Hojancha,Average,Availability,ICMP ping check recovered,False,,False,
+EV01196,2024-10-02 22:41:47,SW-GUA-012,Switch,Mansion,Average,Availability,Interface flap detected,False,,True,46
+EV01110,2024-10-03 02:08:01,OLT-GUA-050,OLT,Nicoya,Average,Connectivity,ICMP ping check recovered,False,,True,79
+EV01099,2024-10-03 02:24:31,SW-GUA-010,Switch,Nicoya,Information,Performance,SNMP trap received,False,,False,37
+EV01066,2024-10-03 03:19:59,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Average,Performance,ARP table overflow warning,False,,False,75
+EV01205,2024-10-03 10:02:40,SW-GUA-011,Switch,Carmona,Average,Performance,NTP sync drift,False,,False,
+EV01222,2024-10-03 15:12:32,AP-GUA-022,AccessPoint,Nosara,Warning,Connectivity,DNS resolution slow,False,,True,37
+EV01176,2024-10-04 00:26:18,SW-GUA-010,Switch,Nicoya,Information,Availability,NTP sync drift,False,,True,
+EV01095,2024-10-04 03:52:56,OLT-GUA-050,OLT,Nicoya,Warning,Performance,BGP neighbor state change,False,,False,
+EV01049,2024-10-04 05:05:15,LINK-WAN-002,WAN_Link,Nicoya-Samara,Information,Performance,NTP sync drift,False,,True,63
+EV01102,2024-10-05 03:58:13,SW-GUA-011,Switch,Carmona,Average,Performance,ICMP ping check recovered,False,,True,15
+EV01179,2024-10-05 09:16:44,RB-GUA-002,Router,Hojancha,Information,Connectivity,ICMP ping check recovered,False,,False,37
+EV01112,2024-10-05 21:58:24,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Average,Performance,ARP table overflow warning,False,,False,
+EV01132,2024-10-06 21:53:40,SW-GUA-011,Switch,Carmona,Warning,Availability,BGP neighbor state change,False,,False,111
+EV01091,2024-10-07 02:23:08,AP-GUA-021,AccessPoint,Samara,Information,Performance,ARP table overflow warning,False,,False,45
+EV01121,2024-10-07 05:33:49,LINK-WAN-002,WAN_Link,Nicoya-Samara,Information,Performance,SNMP trap received,False,,False,
+EV01009,2024-10-07 12:00:00,SW-GUA-010,Switch,Nicoya,Warning,Performance,CPU usage above 70% for 15 min,True,cpu_spike,False,41
+EV01010,2024-10-07 19:12:00,SW-GUA-010,Switch,Nicoya,Warning,Performance,CPU usage above 78% for 10 min,True,cpu_spike,True,15
+EV01011,2024-10-08 00:00:00,SW-GUA-010,Switch,Nicoya,High,Performance,CPU usage exceeded 85% for sustained period,False,cpu_spike,True,38
+EV01198,2024-10-08 04:29:28,LINK-WAN-002,WAN_Link,Nicoya-Samara,Information,Availability,ARP table overflow warning,False,,False,73
+EV01175,2024-10-08 11:56:12,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Performance,ARP table overflow warning,False,,False,
+EV01218,2024-10-09 06:23:57,BTS-GUA-041,BaseStation,Bejuco,Information,Connectivity,ICMP ping check recovered,False,,True,69
+EV01103,2024-10-09 14:41:18,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Connectivity,Interface flap detected,False,,True,102
+EV01024,2024-10-10 00:00:00,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Performance,Memory usage growing trend detected,True,memory_leak,True,18
+EV01025,2024-10-10 16:48:00,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Performance,Memory usage above 75%,True,memory_leak,False,6
+EV01026,2024-10-11 00:00:00,SRV-GUA-030,Server,DataCenter-Nicoya,High,Performance,Memory usage growing continuously - possible leak,False,memory_leak,True,39
+EV01223,2024-10-12 05:34:08,SW-GUA-010,Switch,Nicoya,Average,Availability,ARP table overflow warning,False,,False,98
+EV01202,2024-10-13 01:52:46,SW-GUA-010,Switch,Nicoya,Warning,Performance,ICMP ping check recovered,False,,False,117
+EV01113,2024-10-13 07:14:18,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Information,Availability,DNS resolution slow,False,,False,40
+EV01089,2024-10-13 22:08:15,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Information,Connectivity,BGP neighbor state change,False,,False,50
+EV01219,2024-10-14 01:59:00,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Availability,SNMP trap received,False,,True,
+EV01050,2024-10-14 06:12:59,AP-GUA-020,AccessPoint,Nicoya,Average,Connectivity,SNMP trap received,False,,False,82
+EV01214,2024-10-15 04:38:16,OLT-GUA-050,OLT,Nicoya,Information,Availability,BGP neighbor state change,False,,True,
+EV01000,2024-10-15 12:00:00,RB-GUA-001,Router,Nicoya,Warning,Performance,CPU usage above 70% for 15 min,True,cpu_spike,False,
+EV01001,2024-10-15 19:12:00,RB-GUA-001,Router,Nicoya,Warning,Performance,CPU usage above 78% for 10 min,True,cpu_spike,False,37
+EV01002,2024-10-16 00:00:00,RB-GUA-001,Router,Nicoya,High,Performance,CPU usage exceeded 85% for sustained period,False,cpu_spike,True,60
+EV01141,2024-10-16 06:01:37,AP-GUA-020,AccessPoint,Nicoya,Information,Availability,ICMP ping check recovered,False,,True,32
+EV01200,2024-10-16 07:42:01,RB-GUA-002,Router,Hojancha,Information,Performance,ARP table overflow warning,False,,False,
+EV01194,2024-10-17 06:54:57,RB-GUA-002,Router,Hojancha,Information,Performance,High latency brief spike,False,,False,43
+EV01114,2024-10-17 09:17:20,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Connectivity,NTP sync drift,False,,False,99
+EV01177,2024-10-18 02:52:16,SW-GUA-011,Switch,Carmona,Warning,Connectivity,ARP table overflow warning,False,,True,
+EV01104,2024-10-19 21:16:01,AP-GUA-021,AccessPoint,Samara,Information,Connectivity,High latency brief spike,False,,True,43
+EV01122,2024-10-20 15:18:11,SW-GUA-010,Switch,Nicoya,Warning,Performance,High latency brief spike,False,,False,99
+EV01156,2024-10-20 17:24:25,SRV-GUA-031,Server,DataCenter-Nicoya,Average,Connectivity,BGP neighbor state change,False,,False,
+EV01174,2024-10-20 20:10:16,BTS-GUA-040,BaseStation,Cerro-Azul,Information,Availability,High latency brief spike,False,,True,
+EV01142,2024-10-20 21:17:53,AP-GUA-022,AccessPoint,Nosara,Average,Connectivity,SNMP trap received,False,,True,89
+EV01018,2024-10-20 21:36:00,AP-GUA-021,AccessPoint,Samara,Warning,Availability,Packet loss intermittent detected,True,link_down,True,17
+EV01019,2024-10-20 22:48:00,AP-GUA-021,AccessPoint,Samara,Average,Availability,Interface error rate increasing,True,link_down,True,45
+EV01020,2024-10-21 00:00:00,AP-GUA-021,AccessPoint,Samara,Disaster,Availability,Network link down - service interruption,False,link_down,True,44
+EV01081,2024-10-21 01:14:10,SW-GUA-010,Switch,Nicoya,Information,Connectivity,ICMP ping check recovered,False,,True,78
+EV01167,2024-10-22 03:27:50,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Performance,ICMP ping check recovered,False,,False,55
+EV01048,2024-10-22 22:46:21,OLT-GUA-050,OLT,Nicoya,Average,Connectivity,BGP neighbor state change,False,,True,7
+EV01137,2024-10-23 00:23:14,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Performance,ARP table overflow warning,False,,True,9
+EV01242,2024-10-23 21:58:34,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Connectivity,High latency brief spike,False,,True,30
+EV01078,2024-10-23 22:02:57,RB-GUA-002,Router,Hojancha,Information,Performance,ARP table overflow warning,False,,True,45
+EV01189,2024-10-25 03:18:30,AP-GUA-020,AccessPoint,Nicoya,Average,Performance,SNMP trap received,False,,True,28
+EV01181,2024-10-25 06:52:38,OLT-GUA-050,OLT,Nicoya,Average,Availability,SNMP trap received,False,,False,
+EV01213,2024-10-25 15:09:33,BTS-GUA-040,BaseStation,Cerro-Azul,Information,Connectivity,High latency brief spike,False,,True,
+EV01035,2024-10-25 16:48:00,BTS-GUA-040,BaseStation,Cerro-Azul,Warning,Hardware,Temperature rising above normal range,True,temperature_high,False,28
+EV01133,2024-10-25 18:04:38,SW-GUA-012,Switch,Mansion,Warning,Performance,BGP neighbor state change,False,,False,87
+EV01036,2024-10-25 21:36:00,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Hardware,Fan speed abnormal,True,temperature_high,False,7
+EV01037,2024-10-26 00:00:00,BTS-GUA-040,BaseStation,Cerro-Azul,Disaster,Hardware,Device temperature critical - risk of hardware damage,False,temperature_high,True,15
+EV01077,2024-10-26 12:36:24,SW-GUA-012,Switch,Mansion,Information,Connectivity,BGP neighbor state change,False,,True,72
+EV01063,2024-10-26 16:28:32,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Connectivity,Interface flap detected,False,,False,120
+EV01061,2024-10-26 20:15:32,AP-GUA-020,AccessPoint,Nicoya,Warning,Performance,ARP table overflow warning,False,,False,95
+EV01183,2024-10-27 06:20:39,AP-GUA-022,AccessPoint,Nosara,Information,Availability,DNS resolution slow,False,,True,106
+EV01115,2024-10-27 09:34:21,RB-GUA-002,Router,Hojancha,Average,Connectivity,ARP table overflow warning,False,,True,10
+EV01192,2024-10-28 07:50:51,OLT-GUA-050,OLT,Nicoya,Information,Availability,NTP sync drift,False,,False,14
+EV01120,2024-10-28 15:20:26,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Connectivity,ICMP ping check recovered,False,,True,53
+EV01212,2024-10-29 06:04:35,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Connectivity,High latency brief spike,False,,False,
+EV01093,2024-10-29 18:55:45,RB-GUA-002,Router,Hojancha,Warning,Availability,DNS resolution slow,False,,False,101
+EV01139,2024-10-29 19:56:03,SW-GUA-011,Switch,Carmona,Information,Availability,High latency brief spike,False,,True,
+EV01111,2024-10-29 23:33:00,AP-GUA-022,AccessPoint,Nosara,Average,Availability,SNMP trap received,False,,True,66
+EV01217,2024-10-30 10:20:21,RB-GUA-002,Router,Hojancha,Information,Performance,BGP neighbor state change,False,,False,4
+EV01154,2024-10-30 17:22:19,AP-GUA-020,AccessPoint,Nicoya,Average,Availability,SNMP trap received,False,,False,
+EV01030,2024-10-30 19:12:00,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Connectivity,CRC errors starting to appear,True,crc_errors,True,
+EV01117,2024-10-30 21:12:42,SW-GUA-012,Switch,Mansion,Warning,Performance,SNMP trap received,False,,True,
+EV01031,2024-10-31 00:00:00,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Connectivity,CRC errors rate spike detected on interface,False,crc_errors,True,20
+EV01227,2024-10-31 00:03:06,AP-GUA-020,AccessPoint,Nicoya,Average,Connectivity,BGP neighbor state change,False,,True,
+EV01234,2024-10-31 01:45:39,AP-GUA-021,AccessPoint,Samara,Information,Connectivity,SNMP trap received,False,,False,85
+EV01131,2024-10-31 20:35:58,BTS-GUA-040,BaseStation,Cerro-Azul,Warning,Connectivity,High latency brief spike,False,,False,
+EV01224,2024-11-01 09:32:09,OLT-GUA-050,OLT,Nicoya,Information,Availability,DNS resolution slow,False,,False,
+EV01087,2024-11-01 18:28:26,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Connectivity,Interface flap detected,False,,True,30
+EV01098,2024-11-01 22:47:35,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Connectivity,ARP table overflow warning,False,,True,25
+EV01080,2024-11-02 15:09:07,RB-GUA-002,Router,Hojancha,Average,Connectivity,NTP sync drift,False,,False,57
+EV01046,2024-11-03 21:52:25,RB-GUA-002,Router,Hojancha,Warning,Availability,SNMP trap received,False,,False,
+EV01166,2024-11-04 01:04:46,RB-GUA-001,Router,Nicoya,Average,Connectivity,SNMP trap received,False,,False,57
+EV01079,2024-11-04 04:57:15,BTS-GUA-041,BaseStation,Bejuco,Average,Availability,ARP table overflow warning,False,,False,
+EV01169,2024-11-04 06:35:44,AP-GUA-022,AccessPoint,Nosara,Information,Connectivity,ICMP ping check recovered,False,,False,
+EV01006,2024-11-04 12:00:00,RB-GUA-002,Router,Hojancha,Warning,Performance,CPU usage above 70% for 15 min,True,cpu_spike,True,
+EV01172,2024-11-04 16:01:48,SW-GUA-012,Switch,Mansion,Average,Availability,BGP neighbor state change,False,,True,
+EV01206,2024-11-04 18:06:14,BTS-GUA-041,BaseStation,Bejuco,Warning,Availability,BGP neighbor state change,False,,False,45
+EV01007,2024-11-04 19:12:00,RB-GUA-002,Router,Hojancha,Warning,Performance,CPU usage above 78% for 10 min,True,cpu_spike,True,44
+EV01008,2024-11-05 00:00:00,RB-GUA-002,Router,Hojancha,High,Performance,CPU usage exceeded 85% for sustained period,False,cpu_spike,True,52
+EV01240,2024-11-05 14:54:23,SW-GUA-012,Switch,Mansion,Information,Performance,BGP neighbor state change,False,,True,
+EV01054,2024-11-05 21:23:15,SW-GUA-010,Switch,Nicoya,Information,Performance,High latency brief spike,False,,True,
+EV01211,2024-11-05 22:18:49,AP-GUA-022,AccessPoint,Nosara,Average,Performance,SNMP trap received,False,,False,81
+EV01059,2024-11-06 14:41:08,AP-GUA-020,AccessPoint,Nicoya,Warning,Connectivity,Interface flap detected,False,,False,51
+EV01106,2024-11-07 01:42:34,OLT-GUA-050,OLT,Nicoya,Average,Availability,DNS resolution slow,False,,False,96
+EV01190,2024-11-07 01:57:52,AP-GUA-020,AccessPoint,Nicoya,Warning,Connectivity,ICMP ping check recovered,False,,False,97
+EV01045,2024-11-07 08:09:01,SW-GUA-011,Switch,Carmona,Average,Connectivity,ICMP ping check recovered,False,,True,97
+EV01052,2024-11-07 23:24:25,BTS-GUA-040,BaseStation,Cerro-Azul,Warning,Availability,NTP sync drift,False,,True,64
+EV01233,2024-11-08 09:50:48,SRV-GUA-031,Server,DataCenter-Nicoya,Average,Connectivity,DNS resolution slow,False,,True,26
+EV01149,2024-11-08 12:21:57,RB-GUA-002,Router,Hojancha,Average,Availability,High latency brief spike,False,,True,8
+EV01062,2024-11-08 14:50:47,RB-GUA-001,Router,Nicoya,Warning,Performance,High latency brief spike,False,,True,9
+EV01071,2024-11-08 14:57:30,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Connectivity,DNS resolution slow,False,,True,
+EV01101,2024-11-08 18:14:57,AP-GUA-022,AccessPoint,Nosara,Warning,Connectivity,SNMP trap received,False,,True,
+EV01073,2024-11-10 11:08:38,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Connectivity,ICMP ping check recovered,False,,False,57
+EV01092,2024-11-10 14:22:54,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Information,Availability,BGP neighbor state change,False,,False,35
+EV01193,2024-11-11 02:02:32,AP-GUA-020,AccessPoint,Nicoya,Warning,Connectivity,High latency brief spike,False,,True,
+EV01243,2024-11-11 10:04:56,RB-GUA-001,Router,Nicoya,Warning,Performance,NTP sync drift,False,,True,42
+EV01003,2024-11-11 21:36:00,RB-GUA-001,Router,Nicoya,Warning,Availability,Packet loss intermittent detected,True,link_down,True,
+EV01004,2024-11-11 22:48:00,RB-GUA-001,Router,Nicoya,Average,Availability,Interface error rate increasing,True,link_down,True,6
+EV01005,2024-11-12 00:00:00,RB-GUA-001,Router,Nicoya,Disaster,Availability,Network link down - service interruption,False,link_down,True,9
+EV01238,2024-11-12 00:05:38,SRV-GUA-030,Server,DataCenter-Nicoya,Information,Availability,Interface flap detected,False,,False,68
+EV01051,2024-11-12 10:07:18,SW-GUA-010,Switch,Nicoya,Information,Connectivity,NTP sync drift,False,,False,
+EV01155,2024-11-13 06:27:59,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Connectivity,Interface flap detected,False,,False,44
+EV01140,2024-11-13 09:11:44,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Performance,Interface flap detected,False,,True,83
+EV01075,2024-11-14 11:05:47,OLT-GUA-050,OLT,Nicoya,Warning,Connectivity,ICMP ping check recovered,False,,False,37
+EV01032,2024-11-14 16:48:00,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Performance,Bandwidth above 80%,True,bandwidth_saturation,False,16
+EV01033,2024-11-14 21:36:00,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Performance,Bandwidth above 88%,True,bandwidth_saturation,False,23
+EV01204,2024-11-14 22:16:21,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Performance,Interface flap detected,False,,True,21
+EV01034,2024-11-15 00:00:00,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Performance,Bandwidth utilization above 90%,False,bandwidth_saturation,True,10
+EV01184,2024-11-15 17:05:41,BTS-GUA-041,BaseStation,Bejuco,Warning,Availability,BGP neighbor state change,False,,False,
+EV01225,2024-11-15 23:13:29,BTS-GUA-041,BaseStation,Bejuco,Warning,Performance,High latency brief spike,False,,True,107
+EV01076,2024-11-16 15:07:37,OLT-GUA-050,OLT,Nicoya,Warning,Connectivity,BGP neighbor state change,False,,True,
+EV01056,2024-11-16 17:45:47,SW-GUA-011,Switch,Carmona,Warning,Connectivity,NTP sync drift,False,,False,
+EV01047,2024-11-16 23:32:27,AP-GUA-020,AccessPoint,Nicoya,Information,Connectivity,Interface flap detected,False,,True,
+EV01160,2024-11-16 23:51:17,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Connectivity,ARP table overflow warning,False,,True,49
+EV01124,2024-11-17 05:55:59,AP-GUA-021,AccessPoint,Samara,Warning,Connectivity,SNMP trap received,False,,False,
+EV01231,2024-11-18 12:05:25,OLT-GUA-050,OLT,Nicoya,Average,Performance,ICMP ping check recovered,False,,False,100
+EV01100,2024-11-18 14:36:34,RB-GUA-002,Router,Hojancha,Average,Availability,ICMP ping check recovered,False,,False,
+EV01085,2024-11-18 15:05:00,SW-GUA-011,Switch,Carmona,Information,Performance,ICMP ping check recovered,False,,True,108
+EV01220,2024-11-18 15:12:11,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Availability,BGP neighbor state change,False,,True,29
+EV01197,2024-11-19 07:53:57,RB-GUA-001,Router,Nicoya,Warning,Availability,NTP sync drift,False,,False,50
+EV01058,2024-11-19 11:09:19,RB-GUA-001,Router,Nicoya,Average,Availability,SNMP trap received,False,,True,
+EV01041,2024-11-19 12:00:00,OLT-GUA-050,OLT,Nicoya,Warning,Connectivity,Fiber attenuation slightly degraded,True,fiber_attenuation,True,
+EV01042,2024-11-19 19:12:00,OLT-GUA-050,OLT,Nicoya,Average,Connectivity,Attenuation near threshold,True,fiber_attenuation,True,21
+EV01195,2024-11-19 23:14:10,RB-GUA-001,Router,Nicoya,Warning,Availability,ICMP ping check recovered,False,,True,86
+EV01043,2024-11-20 00:00:00,OLT-GUA-050,OLT,Nicoya,High,Connectivity,Fiber attenuation exceeds threshold - degraded signal,False,fiber_attenuation,True,14
+EV01134,2024-11-21 16:35:10,SW-GUA-010,Switch,Nicoya,Average,Availability,High latency brief spike,False,,False,61
+EV01158,2024-11-21 17:58:24,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Connectivity,ARP table overflow warning,False,,True,83
+EV01187,2024-11-21 23:26:34,SW-GUA-012,Switch,Mansion,Warning,Performance,ICMP ping check recovered,False,,True,
+EV01060,2024-11-23 04:09:32,AP-GUA-020,AccessPoint,Nicoya,Average,Availability,DNS resolution slow,False,,False,2
+EV01118,2024-11-23 14:41:59,SW-GUA-010,Switch,Nicoya,Average,Performance,NTP sync drift,False,,True,
+EV01067,2024-11-23 23:15:58,AP-GUA-022,AccessPoint,Nosara,Warning,Performance,NTP sync drift,False,,True,
+EV01012,2024-11-24 16:48:00,SW-GUA-011,Switch,Carmona,Warning,Hardware,Temperature rising above normal range,True,temperature_high,True,
+EV01013,2024-11-24 21:36:00,SW-GUA-011,Switch,Carmona,Average,Hardware,Fan speed abnormal,True,temperature_high,True,16
+EV01082,2024-11-24 22:38:48,AP-GUA-021,AccessPoint,Samara,Information,Connectivity,ICMP ping check recovered,False,,False,3
+EV01014,2024-11-25 00:00:00,SW-GUA-011,Switch,Carmona,Disaster,Hardware,Device temperature critical - risk of hardware damage,False,temperature_high,True,47
+EV01074,2024-11-25 20:22:04,AP-GUA-021,AccessPoint,Samara,Information,Availability,DNS resolution slow,False,,True,18
+EV01147,2024-11-25 20:47:57,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Information,Performance,BGP neighbor state change,False,,True,40
+EV01088,2024-11-25 21:58:57,RB-GUA-001,Router,Nicoya,Information,Performance,SNMP trap received,False,,False,47
+EV01083,2024-11-26 00:00:58,LINK-WAN-002,WAN_Link,Nicoya-Samara,Information,Availability,BGP neighbor state change,False,,True,103
+EV01057,2024-11-26 09:12:21,BTS-GUA-041,BaseStation,Bejuco,Average,Connectivity,DNS resolution slow,False,,True,
+EV01153,2024-11-27 05:34:23,SW-GUA-011,Switch,Carmona,Warning,Performance,High latency brief spike,False,,True,21
+EV01138,2024-11-27 12:18:23,RB-GUA-002,Router,Hojancha,Information,Availability,High latency brief spike,False,,True,47
+EV01152,2024-11-27 23:05:34,AP-GUA-020,AccessPoint,Nicoya,Average,Availability,ICMP ping check recovered,False,,True,120
+EV01096,2024-11-28 22:59:31,AP-GUA-020,AccessPoint,Nicoya,Warning,Performance,Interface flap detected,False,,True,
+EV01144,2024-11-29 04:03:31,SW-GUA-011,Switch,Carmona,Warning,Performance,ARP table overflow warning,False,,True,70
+EV01210,2024-11-29 17:59:08,SW-GUA-012,Switch,Mansion,Average,Availability,BGP neighbor state change,False,,False,79
+EV01146,2024-11-30 12:50:08,RB-GUA-001,Router,Nicoya,Average,Availability,BGP neighbor state change,False,,False,109
+EV01239,2024-11-30 15:44:41,AP-GUA-022,AccessPoint,Nosara,Average,Availability,SNMP trap received,False,,False,70
+EV01241,2024-12-01 11:58:29,AP-GUA-022,AccessPoint,Nosara,Average,Connectivity,ICMP ping check recovered,False,,True,
+EV01216,2024-12-01 14:18:51,SW-GUA-010,Switch,Nicoya,Average,Availability,ARP table overflow warning,False,,True,97
+EV01119,2024-12-01 23:58:04,SW-GUA-012,Switch,Mansion,Information,Connectivity,NTP sync drift,False,,True,
+EV01021,2024-12-02 00:00:00,AP-GUA-022,AccessPoint,Nosara,Warning,Performance,Memory usage growing trend detected,True,memory_leak,True,9
+EV01107,2024-12-02 04:55:30,OLT-GUA-050,OLT,Nicoya,Information,Availability,High latency brief spike,False,,False,112
+EV01090,2024-12-02 07:47:19,RB-GUA-001,Router,Nicoya,Warning,Performance,ICMP ping check recovered,False,,True,
+EV01022,2024-12-02 16:48:00,AP-GUA-022,AccessPoint,Nosara,Average,Performance,Memory usage above 75%,True,memory_leak,True,
+EV01084,2024-12-02 18:06:49,SW-GUA-012,Switch,Mansion,Information,Connectivity,ICMP ping check recovered,False,,False,
+EV01023,2024-12-03 00:00:00,AP-GUA-022,AccessPoint,Nosara,High,Performance,Memory usage growing continuously - possible leak,False,memory_leak,True,17
+EV01188,2024-12-04 06:25:40,BTS-GUA-041,BaseStation,Bejuco,Warning,Performance,ICMP ping check recovered,False,,True,
+EV01094,2024-12-04 09:35:12,AP-GUA-020,AccessPoint,Nicoya,Average,Performance,NTP sync drift,False,,False,106
+EV01123,2024-12-04 10:03:55,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Connectivity,SNMP trap received,False,,True,
+EV01157,2024-12-04 13:51:11,SW-GUA-010,Switch,Nicoya,Average,Performance,ICMP ping check recovered,False,,False,
+EV01070,2024-12-04 18:43:06,SW-GUA-010,Switch,Nicoya,Warning,Performance,DNS resolution slow,False,,False,103
+EV01168,2024-12-04 18:58:34,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Performance,ICMP ping check recovered,False,,True,
+EV01215,2024-12-04 21:21:52,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Performance,NTP sync drift,False,,True,
+EV01128,2024-12-05 04:59:06,AP-GUA-021,AccessPoint,Samara,Information,Connectivity,Interface flap detected,False,,True,48
+EV01055,2024-12-06 00:45:51,SRV-GUA-031,Server,DataCenter-Nicoya,Warning,Availability,NTP sync drift,False,,True,110
+EV01163,2024-12-06 13:06:30,OLT-GUA-050,OLT,Nicoya,Average,Availability,NTP sync drift,False,,False,
+EV01201,2024-12-07 01:49:57,LINK-WAN-002,WAN_Link,Nicoya-Samara,Warning,Connectivity,ICMP ping check recovered,False,,True,62
+EV01151,2024-12-07 03:24:21,SW-GUA-012,Switch,Mansion,Average,Performance,ICMP ping check recovered,False,,False,90
+EV01027,2024-12-08 00:00:00,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Storage,Disk usage above 80%,True,disk_full,False,37
+EV01191,2024-12-08 11:21:58,BTS-GUA-041,BaseStation,Bejuco,Warning,Performance,High latency brief spike,False,,True,110
+EV01232,2024-12-09 09:32:49,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Availability,BGP neighbor state change,False,,False,106
+EV01028,2024-12-09 12:00:00,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Storage,Disk usage above 90%,True,disk_full,False,14
+EV01180,2024-12-09 16:35:14,AP-GUA-022,AccessPoint,Nosara,Average,Performance,High latency brief spike,False,,True,2
+EV01229,2024-12-09 18:47:15,AP-GUA-020,AccessPoint,Nicoya,Information,Connectivity,ICMP ping check recovered,False,,False,1
+EV01029,2024-12-10 00:00:00,SRV-GUA-030,Server,DataCenter-Nicoya,High,Storage,Disk usage approaching 100% - service risk,False,disk_full,True,33
+EV01150,2024-12-10 01:15:42,SW-GUA-012,Switch,Mansion,Warning,Connectivity,ARP table overflow warning,False,,False,62
+EV01065,2024-12-10 09:09:13,SW-GUA-012,Switch,Mansion,Information,Availability,SNMP trap received,False,,True,
+EV01207,2024-12-10 16:50:00,SW-GUA-011,Switch,Carmona,Average,Connectivity,High latency brief spike,False,,True,9
+EV01199,2024-12-11 09:22:27,AP-GUA-020,AccessPoint,Nicoya,Average,Connectivity,ARP table overflow warning,False,,False,59
+EV01148,2024-12-11 12:25:34,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Average,Connectivity,ICMP ping check recovered,False,,False,52
+EV01164,2024-12-11 14:30:32,SW-GUA-010,Switch,Nicoya,Warning,Connectivity,BGP neighbor state change,False,,True,34
+EV01130,2024-12-12 03:40:55,SRV-GUA-031,Server,DataCenter-Nicoya,Information,Performance,BGP neighbor state change,False,,True,34
+EV01053,2024-12-12 07:06:22,SW-GUA-010,Switch,Nicoya,Warning,Connectivity,BGP neighbor state change,False,,False,27
+EV01044,2024-12-12 21:27:57,BTS-GUA-040,BaseStation,Cerro-Azul,Warning,Availability,SNMP trap received,False,,False,47
+EV01208,2024-12-13 05:31:27,OLT-GUA-050,OLT,Nicoya,Average,Availability,ICMP ping check recovered,False,,False,
+EV01145,2024-12-14 15:00:31,SRV-GUA-031,Server,DataCenter-Nicoya,Average,Availability,BGP neighbor state change,False,,False,
+EV01173,2024-12-14 23:15:48,SW-GUA-011,Switch,Carmona,Warning,Connectivity,SNMP trap received,False,,True,
+EV01221,2024-12-15 02:38:27,BTS-GUA-040,BaseStation,Cerro-Azul,Average,Connectivity,NTP sync drift,False,,False,31
+EV01136,2024-12-17 20:57:13,SRV-GUA-030,Server,DataCenter-Nicoya,Average,Performance,High latency brief spike,False,,True,43
+EV01182,2024-12-18 02:24:08,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Availability,ARP table overflow warning,False,,True,21
+EV01230,2024-12-18 04:30:13,BTS-GUA-040,BaseStation,Cerro-Azul,Information,Connectivity,SNMP trap received,False,,True,8
+EV01165,2024-12-18 13:37:25,OLT-GUA-050,OLT,Nicoya,Average,Connectivity,BGP neighbor state change,False,,True,
+EV01105,2024-12-18 22:50:30,LINK-WAN-002,WAN_Link,Nicoya-Samara,Average,Availability,High latency brief spike,False,,False,21
+EV01209,2024-12-19 00:29:18,RB-GUA-001,Router,Nicoya,Average,Connectivity,ARP table overflow warning,False,,False,82
+EV01162,2024-12-19 02:37:43,AP-GUA-022,AccessPoint,Nosara,Information,Connectivity,Interface flap detected,False,,True,
+EV01068,2024-12-19 08:57:51,SRV-GUA-031,Server,DataCenter-Nicoya,Average,Availability,SNMP trap received,False,,True,28
+EV01228,2024-12-19 16:41:27,AP-GUA-020,AccessPoint,Nicoya,Warning,Connectivity,Interface flap detected,False,,True,
+EV01086,2024-12-19 17:35:54,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Average,Availability,SNMP trap received,False,,True,
+EV01038,2024-12-19 21:36:00,BTS-GUA-041,BaseStation,Bejuco,Warning,Availability,Packet loss intermittent detected,True,link_down,False,34
+EV01039,2024-12-19 22:48:00,BTS-GUA-041,BaseStation,Bejuco,Average,Availability,Interface error rate increasing,True,link_down,True,
+EV01040,2024-12-20 00:00:00,BTS-GUA-041,BaseStation,Bejuco,Disaster,Availability,Network link down - service interruption,False,link_down,True,34
+EV01125,2024-12-20 16:53:42,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Performance,SNMP trap received,False,,False,90
+EV01127,2024-12-21 02:09:40,BTS-GUA-040,BaseStation,Cerro-Azul,Warning,Connectivity,Interface flap detected,False,,False,88
+EV01178,2024-12-21 04:04:58,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Connectivity,ICMP ping check recovered,False,,True,42
+EV01170,2024-12-21 06:31:03,OLT-GUA-050,OLT,Nicoya,Warning,Performance,ICMP ping check recovered,False,,False,
+EV01108,2024-12-21 22:25:47,BTS-GUA-041,BaseStation,Bejuco,Warning,Performance,High latency brief spike,False,,False,73
+EV01109,2024-12-21 23:28:28,RB-GUA-001,Router,Nicoya,Warning,Connectivity,SNMP trap received,False,,True,
+EV01072,2024-12-22 16:13:03,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Performance,ARP table overflow warning,False,,True,
+EV01135,2024-12-24 05:07:46,SW-GUA-010,Switch,Nicoya,Average,Performance,NTP sync drift,False,,True,52
+EV01237,2024-12-25 05:38:44,SW-GUA-010,Switch,Nicoya,Warning,Performance,ARP table overflow warning,False,,False,
+EV01171,2024-12-25 06:58:40,BTS-GUA-041,BaseStation,Bejuco,Warning,Performance,ARP table overflow warning,False,,False,
+EV01126,2024-12-25 21:09:14,AP-GUA-021,AccessPoint,Samara,Information,Availability,DNS resolution slow,False,,True,38
+EV01161,2024-12-26 10:19:17,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Average,Performance,ARP table overflow warning,False,,True,
+EV01159,2024-12-27 04:54:12,SW-GUA-012,Switch,Mansion,Warning,Availability,SNMP trap received,False,,False,
+EV01226,2024-12-27 09:30:46,LINK-WAN-002,WAN_Link,Nicoya-Samara,Information,Availability,DNS resolution slow,False,,False,110
+EV01116,2024-12-27 18:34:40,SRV-GUA-030,Server,DataCenter-Nicoya,Warning,Availability,BGP neighbor state change,False,,True,
+EV01015,2024-12-27 21:36:00,SW-GUA-012,Switch,Mansion,Warning,Availability,Packet loss intermittent detected,True,link_down,False,
+EV01016,2024-12-27 22:48:00,SW-GUA-012,Switch,Mansion,Average,Availability,Interface error rate increasing,True,link_down,True,16
+EV01017,2024-12-28 00:00:00,SW-GUA-012,Switch,Mansion,Disaster,Availability,Network link down - service interruption,False,link_down,True,34
+EV01064,2024-12-28 11:22:24,LINK-WAN-001,WAN_Link,Nicoya-Hojancha,Warning,Connectivity,Interface flap detected,False,,True,
+EV01097,2024-12-28 14:35:50,BTS-GUA-041,BaseStation,Bejuco,Warning,Availability,ARP table overflow warning,False,,True,
+EV01203,2024-12-28 18:54:22,AP-GUA-022,AccessPoint,Nosara,Average,Connectivity,Interface flap detected,False,,True,85
+EV01236,2024-12-28 23:23:19,SW-GUA-010,Switch,Nicoya,Information,Availability,DNS resolution slow,False,,False,63
+EV01129,2024-12-29 14:13:42,SW-GUA-012,Switch,Mansion,Average,Performance,BGP neighbor state change,False,,False,48
