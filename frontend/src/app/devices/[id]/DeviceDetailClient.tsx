@@ -2,7 +2,7 @@
 
 import { useDeviceDetail } from "@/hooks/useDeviceDetail";
 import { DeviceDetailSkeleton } from "@/components/devices/DeviceDetailSkeleton";
-import { CriticalAlertBanner } from "@/components/devices/CriticalAlertBanner";
+import { CriticalAlertBanner } from "@/components/CriticalAlertBanner";
 import { StatusBadge } from "@/components/StatusBadge";
 import { Server, ArrowLeft, Activity } from "lucide-react";
 import Link from "next/link";

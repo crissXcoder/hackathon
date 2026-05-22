@@ -1,10 +1,7 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings } from '@langchain/google-genai';
-import { DirectoryLoader } from 'langchain/document_loaders/fs/directory';
-import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
-import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
-import { MemoryVectorStore } from 'langchain/vectorstores/memory';
+// removed imports
 import { PromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables';
@@ -15,7 +12,7 @@ import * as fs from 'fs';
 export class AiService implements OnModuleInit {
   private readonly logger = new Logger(AiService.name);
   private model: ChatGoogleGenerativeAI;
-  private vectorStore: MemoryVectorStore;
+  private vectorStore: any;
   private embeddings: GoogleGenerativeAIEmbeddings;
 
   constructor(private configService: ConfigService) {
@@ -28,14 +25,14 @@ export class AiService implements OnModuleInit {
     try {
       this.model = new ChatGoogleGenerativeAI({
         apiKey,
-        modelName: 'gemini-2.5-flash-lite',
+        model: 'gemini-2.5-flash-lite',
         maxOutputTokens: 2048,
         temperature: 0.1,
       });
 
       this.embeddings = new GoogleGenerativeAIEmbeddings({
         apiKey,
-        modelName: 'embedding-001',
+        model: 'embedding-001',
       });
 
       this.logger.log('Gemini model and embeddings initialized successfully');
@@ -49,37 +46,7 @@ export class AiService implements OnModuleInit {
   }
 
   async loadManufacturerDocs() {
-    const docsPath = path.resolve(process.cwd(), '..', 'docs');
-    
-    if (!fs.existsSync(docsPath)) {
-      this.logger.warn(`Docs directory not found at ${docsPath}. Skipping RAG initialization.`);
-      return;
-    }
-
-    try {
-      this.logger.log(`Loading documents from: ${docsPath}`);
-      const loader = new DirectoryLoader(docsPath, {
-        '.pdf': (path: string) => new PDFLoader(path),
-      });
-
-      const docs = await loader.load();
-      if (docs.length === 0) {
-        this.logger.warn('No documents found in docs folder.');
-        return;
-      }
-
-      const textSplitter = new RecursiveCharacterTextSplitter({
-        chunkSize: 1000,
-        chunkOverlap: 200,
-      });
-
-      const splitDocs = await textSplitter.splitDocuments(docs);
-      this.vectorStore = await MemoryVectorStore.fromDocuments(splitDocs, this.embeddings);
-
-      this.logger.log(`Vector store initialized with ${splitDocs.length} chunks.`);
-    } catch (error) {
-      this.logger.error(`Error loading manufacturer docs: ${error.message}`, error.stack);
-    }
+    this.logger.warn(`RAG disabled: DirectoryLoader & MemoryVectorStore imports were crashing app`);
   }
 
   async analyzeDeviceHealth(deviceData: any): Promise<any> {
@@ -146,22 +113,12 @@ export class AiService implements OnModuleInit {
     }
 
     const prompt = PromptTemplate.fromTemplate(`
-      Eres un ingeniero de NOC experto. Revisa el siguiente historial de fallos críticos simulados de este equipo:
-      HISTORIAL DE DISPOSITIVO: {history}
-
-      Basándote EXCLUSIVAMENTE en la siguiente documentación del fabricante (si aplica):
+      Eres un ingeniero de NOC. Revisa el siguiente historial de fallos críticos simulados de este equipo: {history}. 
+      Basándote en la documentación del fabricante, devuelve un JSON con: 'rootCause' (posible causa técnica), 'impact' (qué pasará si no se arregla) y 'solutionSteps' (3 pasos exactos para resolverlo).
+      
       CONTEXTO FABRICANTE: {contexto_fabricante}
-
-      Debes responder ÚNICAMENTE con un objeto JSON válido con esta estructura:
-      {{
-        "rootCause": "Posible causa técnica detallada",
-        "impact": "Qué pasará si no se arregla (ej. degradación de silicio, corte de red)",
-        "solutionSteps": [
-          "Paso 1 exacto para resolverlo",
-          "Paso 2 exacto para resolverlo",
-          "Paso 3 exacto para resolverlo"
-        ]
-      }}
+      
+      IMPORTANTE: Devuelve ÚNICAMENTE un JSON válido sin texto adicional.
     `);
 
     const chain = RunnableSequence.from([

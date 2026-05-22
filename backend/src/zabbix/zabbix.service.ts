@@ -93,7 +93,7 @@ export class ZabbixService {
         }),
       );
 
-      const data = response.data;
+      const data = response.data as JsonRpcResponse<string>;
       if (data.error) {
         const errorDataStr = data.error.data
           ? JSON.stringify(data.error.data)
@@ -116,7 +116,7 @@ export class ZabbixService {
 
       this.authToken = data.result;
       this.logger.log('Successfully authenticated. Token cached.');
-      return this.authToken;
+      return this.authToken as string;
     } catch (error: unknown) {
       if (error instanceof HttpException) {
         throw error;
@@ -243,7 +243,7 @@ export class ZabbixService {
         }),
       );
 
-      const data = response.data;
+      const data = response.data as JsonRpcResponse<T>;
 
       if (data.error) {
         const errMessage = data.error.message;

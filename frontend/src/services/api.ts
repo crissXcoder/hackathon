@@ -52,6 +52,6 @@ export const getDeviceDetail = async (id: string): Promise<DeviceDetailResponse>
 };
 
 export const diagnoseDevice = async (id: string) => {
-  const { data } = await apiClient.post(`/device/${id}/diagnose`);
+  const { data } = await axios.post(`http://localhost:3000/ai/diagnose/${id}`);
   return data;
 };

@@ -89,10 +89,13 @@ export class ZabbixController {
     return this.monitoringService.getSimulatedDeviceDetail(id);
   }
 
-  @Post('device/:id/diagnose')
-  async diagnoseDevice(@Param('id') id: string) {
-    const history = await this.monitoringService.getSimulatedDeviceDetail(id);
-    return this.aiService.diagnoseSpikes(history);
+  @Sse('device/:id/stream')
+  streamDeviceDetail(@Param('id') id: string): Observable<MessageEvent> {
+    // Emitimos cada 3 segundos para mostrar la simulación en tiempo real fluido
+    return interval(3000).pipe(
+      switchMap(() => this.monitoringService.getSimulatedDeviceDetail(id)),
+      map((detail) => ({ data: JSON.stringify(detail) } as MessageEvent)),
+    );
   }
 
   @Get('health')
@@ -108,9 +111,9 @@ export class ZabbixController {
     return interval(10000).pipe(
       switchMap(async () => {
         const { items } = await this.monitoringService.getNetworkHealthStatus(1, 1000);
-        return { data: { metrics: items } };
+        return { metrics: items };
       }),
-      map((payload) => ({ data: payload } as MessageEvent)),
+      map((payload) => ({ data: JSON.stringify(payload) } as MessageEvent)),
     );
   }
 }
