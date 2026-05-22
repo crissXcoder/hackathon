@@ -9,12 +9,13 @@ interface StatusBadgeProps {
 
 const STATUS_CONFIG: Record<
   DeviceStatus,
-  { bg: string; text: string; dot: string; label: string; ariaLabel: string }
+  { bg: string; text: string; dot: string; border: string; label: string; ariaLabel: string }
 > = {
   healthy: {
     bg: 'bg-primary/10',
     text: 'text-primary',
     dot: 'bg-primary',
+    border: 'border-primary/20',
     label: "En línea",
     ariaLabel: "Estado: En línea",
   },
@@ -22,6 +23,7 @@ const STATUS_CONFIG: Record<
     bg: 'bg-warning/10',
     text: 'text-warning',
     dot: 'bg-warning',
+    border: 'border-warning/20',
     label: "Advertencia",
     ariaLabel: "Estado: Advertencia",
   },
@@ -29,6 +31,7 @@ const STATUS_CONFIG: Record<
     bg: 'bg-error/10',
     text: 'text-error',
     dot: 'bg-error',
+    border: 'border-error/20',
     label: "Crítico",
     ariaLabel: "Estado: Crítico",
   },
@@ -39,7 +42,7 @@ export function StatusBadge({ status, showLabel = true }: StatusBadgeProps) {
 
   return (
     <div 
-      className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${cfg.bg} ${cfg.text} border border-${cfg.text}/20`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${cfg.bg} ${cfg.text} border ${cfg.border}`}
       aria-label={cfg.ariaLabel}
     >
       <span className="relative flex h-2 w-2 shrink-0 mr-1.5">

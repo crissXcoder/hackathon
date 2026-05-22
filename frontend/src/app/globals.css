@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Dashboard Monitoreo Coopeguanacaste
+   Paleta: primary verde #1EB386 | error rojo | warning amber
+   Tokens semánticos completos para Tailwind v4
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Fuentes */
+  --font-sans: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, ui-monospace, "Cascadia Code", monospace);
+
+  /* ── Typography Scale Overrides (Larger Fonts) ── */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 2.5rem;
+
+
+  /* ── Primary: Verde #1EB386 ── */
+  --color-primary:              #1EB386;
+  --color-primary-light:        #d1f5ea;
+
+  /* ── Semantic states ── */
+  --color-error:                #EF4444;
+  --color-error-container:      #fef2f2;
+  --color-on-error-container:   #7f1d1d;
+
+  --color-warning:              #F59E0B;
+  --color-warning-container:    #fffbeb;
+  --color-on-warning-container: #78350f;
+
+  /* ── Surfaces (light) ── */
+  --color-background:                #f8fafc;
+  --color-foreground:                #111827;
+  --color-surface:                   #ffffff;
+  --color-surface-bright:            #f8fafc;
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container:         #f1f5f9;
+  --color-surface-container-high:    #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+
+  /* ── Text ── */
+  --color-on-surface:   #111827;
+  --color-slate-muted:  #64748b;
+
+  /* ── Borders ── */
+  --color-border-hairline: #e2e8f0;
+
+  /* ── Radii ── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ── Dark mode overrides ── */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    --color-primary:              #34d399;
+    --color-primary-light:        #064e3b;
+
+    --color-error:                #f87171;
+    --color-error-container:      #450a0a;
+    --color-on-error-container:   #fca5a5;
+
+    --color-warning:              #fbbf24;
+    --color-warning-container:    #451a03;
+    --color-on-warning-container: #fde68a;
+
+    --color-background:                #0f172a;
+    --color-foreground:                #f1f5f9;
+    --color-surface:                   #1e293b;
+    --color-surface-bright:            #1e293b;
+    --color-surface-container-lowest:  #0f172a;
+    --color-surface-container:         #1e293b;
+    --color-surface-container-high:    #334155;
+    --color-surface-container-highest: #475569;
+
+    --color-on-surface:   #f1f5f9;
+    --color-slate-muted:  #94a3b8;
+
+    --color-border-hairline: #334155;
   }
 }
 
+/* ── Base styles ── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Accessible focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }

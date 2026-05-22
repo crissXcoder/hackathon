@@ -42,7 +42,7 @@ export function DeviceDetailClient({ id }: DeviceDetailClientProps) {
         Volver
       </Link>
 
-      <CriticalAlertBanner deviceId={device.id} peaksCount={device.peaksCount} />
+      <CriticalAlertBanner deviceId={device.id} status={device.status === 'critical' ? 'CRITICAL' : device.status?.toUpperCase() ?? ''} />
 
       <Card className="overflow-hidden border-border-hairline bg-surface-container-lowest">
         {/* Top Accent Line */}

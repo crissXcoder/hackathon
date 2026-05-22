@@ -25,8 +25,8 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-lg rounded-2xl bg-surface p-6 shadow-2xl border">
-        <div className="flex items-center justify-between mb-6">
+      <div className="w-full max-w-lg rounded-2xl bg-surface p-6 shadow-2xl border max-h-[90vh] flex flex-col">
+        <div className="flex items-center justify-between mb-6 shrink-0">
           <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
             {title}
           </h2>
@@ -37,7 +37,9 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             <X className="h-5 w-5" />
           </button>
         </div>
-        {children}
+        <div className="overflow-y-auto overflow-x-hidden pr-2">
+          {children}
+        </div>
       </div>
     </div>
   );
