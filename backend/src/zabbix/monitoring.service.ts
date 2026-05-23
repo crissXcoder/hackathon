@@ -102,6 +102,9 @@ export class MonitoringService {
       peaks: record.history.map(h => ({
         timestamp: h.timestamp,
         value: Math.max(h.cpu, h.temp, h.ram),
+        cpu: h.cpu,
+        ram: h.ram,
+        temp: h.temp,
       })),
     };
   }

@@ -32,6 +32,9 @@ apiClient.interceptors.response.use(
 export interface DevicePeak {
   timestamp: string;
   value: number;
+  cpu: number;
+  ram: number;
+  temp: number;
 }
 
 export interface DeviceDetailResponse {

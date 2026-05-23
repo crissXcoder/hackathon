@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Server } from "lucide-react";
-import { StatusBadge, type DeviceStatus } from "./StatusBadge";
+import type { DeviceStatus } from "./StatusBadge";
 
 export interface DeviceCardProps {
   id: string;
@@ -14,29 +13,6 @@ export interface DeviceCardProps {
   ip?: string;
 }
 
-interface MetricCellProps {
-  label: string;
-  value: string;
-  valueClassName?: string;
-  unit?: string;
-}
-
-function MetricCell({ label, value, valueClassName, unit }: MetricCellProps) {
-  return (
-    <div className="flex flex-col gap-1">
-      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-muted">
-        {label}
-      </span>
-      <span className={`text-lg font-bold tabular-nums leading-none ${valueClassName}`}>
-        {value}
-        {unit && (
-          <span className="ml-0.5 text-xs font-normal opacity-70">{unit}</span>
-        )}
-      </span>
-    </div>
-  );
-}
-
 export function DeviceCard({
   id,
   name,
@@ -46,87 +22,112 @@ export function DeviceCard({
   memory,
   ip,
 }: DeviceCardProps) {
-  const tempClass =
-    temperature >= 75 ? "text-error" : "text-on-surface";
+  // Determinar el estilo base y configuraciones según el estado
+  const isCritical = status === "critical";
+  const isWarning = status === "warning";
+  const isHealthy = status === "healthy";
+
+  const cardBaseClass = "block bg-surface-container-lowest border rounded-xl p-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg group";
+  const cardBorderClass = isCritical ? "border-volcanic-red/30 shadow-[0_0_15px_rgba(220,38,38,0.05)] relative overflow-hidden" : "border-border-hairline";
+
+  const iconBgClass = isCritical ? "bg-error-container text-volcanic-red" : isWarning ? "bg-surface-container text-primary" : "bg-surface-container text-primary";
+  const iconName = "router"; // Por simplicidad usamos un ícono genérico, pero podríamos mapearlo por tipo de dispositivo si existiera en la prop
+
+  const titleHoverClass = isCritical ? "group-hover:text-volcanic-red" : "group-hover:text-primary";
+
+  const badgeWrapperClass = isCritical 
+    ? "bg-error-container text-on-error-container" 
+    : isWarning 
+    ? "bg-secondary-fixed text-on-secondary-fixed-variant"
+    : "bg-primary-fixed text-on-primary-fixed-variant";
+
+  const badgeDotClass = isCritical
+    ? "" // Para crítico se usa el ícono warning en vez de un dot en el mockup
+    : isWarning
+    ? "bg-secondary-container"
+    : "bg-primary-container animate-subtle-pulse";
+
+  const badgeText = isCritical ? "Crítico" : isWarning ? "Advertencia" : "Óptimo";
+
+  // Helpers para color de barra y texto según severidad
+  const getMetricColor = (val: number, thresholdWarn: number, thresholdCrit: number) => {
+    if (val >= thresholdCrit) return { text: "text-volcanic-red font-bold", bar: "bg-volcanic-red" };
+    if (val >= thresholdWarn) return { text: "text-secondary-container font-bold", bar: "bg-secondary-container" };
+    return { text: "text-on-surface font-medium", bar: "bg-primary-container" };
+  };
+
+  const cpuColor = getMetricColor(cpu, 70, 90);
+  const ramColor = getMetricColor(memory, 75, 90);
+  const tempColor = getMetricColor(temperature, 60, 80);
 
   return (
-    <Link href={`/devices/${id}`} className="block focus:outline-none group">
-      <div className="bg-surface-container-lowest border border-border-hairline rounded-xl overflow-hidden transition-all duration-200 hover:border-primary/50 hover:shadow-md h-full min-h-[220px] flex flex-col relative group-hover:-translate-y-0.5">
-        
-        {/* Top Accent Line */}
-        <div className={`absolute top-0 left-0 right-0 h-1.5 ${
-          status === 'critical' ? 'bg-error' : 
-          status === 'warning' ? 'bg-warning' : 
-          'bg-primary'
-        }`} />
+    <Link href={`/devices/${id}`} className={`${cardBaseClass} ${cardBorderClass}`}>
+      {isCritical && (
+        <div className="absolute top-0 right-0 w-32 h-32 bg-error-container rounded-full blur-3xl -mr-10 -mt-10 opacity-50 pointer-events-none"></div>
+      )}
 
-        <div className="p-6 flex-1 flex flex-col">
-          <div className="flex items-start justify-between gap-3 mb-6 mt-2">
-            <div className="flex items-center gap-3 min-w-0">
-              <div
-                aria-hidden="true"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-surface-container-highest border border-border-hairline"
-              >
-                <Server className="h-5 w-5 text-on-surface" strokeWidth={1.75} />
-              </div>
-              <div className="min-w-0">
-                <h3 className="truncate text-sm font-bold text-on-surface leading-tight">
-                  {name}
-                </h3>
-                {ip && (
-                  <p className="mt-1 truncate text-xs font-mono text-slate-muted">
-                    {ip}
-                  </p>
-                )}
-              </div>
-            </div>
-            <StatusBadge status={status} />
+      <div className={`flex justify-between items-start mb-md ${isCritical ? 'relative z-10' : ''}`}>
+        <div className="flex items-center gap-sm">
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center ${iconBgClass}`}>
+            <span className="material-symbols-outlined">{iconName}</span>
           </div>
-          
-          <div className="mt-auto">
-            <div className="h-px bg-border-hairline w-full mb-4" />
-            <div
-              role="list"
-              aria-label="Métricas del dispositivo"
-              className="grid grid-cols-3 gap-x-2"
-            >
-              <div role="listitem">
-                <MetricCell
-                  label="Temp"
-                  value={temperature.toFixed(1)}
-                  unit="°C"
-                  valueClassName={tempClass}
-                />
-              </div>
-              <div role="listitem" className="border-x border-border-hairline px-2">
-                <MetricCell
-                  label="CPU"
-                  value={cpu.toFixed(0)}
-                  unit="%"
-                  valueClassName={
-                    cpu >= 90
-                      ? "text-error"
-                      : cpu >= 70
-                      ? "text-warning"
-                      : "text-on-surface"
-                  }
-                />
-              </div>
-              <div role="listitem" className="pl-2">
-                <MetricCell
-                  label="RAM"
-                  value={memory.toFixed(0)}
-                  unit="%"
-                  valueClassName={
-                    memory >= 90
-                      ? "text-error"
-                      : memory >= 75
-                      ? "text-warning"
-                      : "text-on-surface"
-                  }
-                />
-              </div>
-            </div>
+          <div>
+            <h3 className={`font-subheadline text-subheadline text-on-surface transition-colors ${titleHoverClass}`}>
+              {name}
+            </h3>
+            <p className="font-caption-stats text-caption-stats text-slate-muted">
+              {ip || "IP no asignada"}
+            </p>
+          </div>
+        </div>
+        
+        <span className={`inline-flex items-center gap-xs px-2 py-1 rounded-full font-caption-stats text-caption-stats ${badgeWrapperClass}`}>
+          {isCritical ? (
+            <span className="material-symbols-outlined text-[12px]">warning</span>
+          ) : (
+            <span className={`w-2 h-2 rounded-full ${badgeDotClass}`}></span>
+          )}
+          {badgeText}
+        </span>
+      </div>
+
+      <div className={`space-y-sm ${isCritical ? 'relative z-10' : ''}`}>
+        {/* CPU */}
+        <div>
+          <div className="flex justify-between font-caption-stats text-caption-stats mb-xs">
+            <span className="text-slate-muted flex items-center gap-xs">
+              <span className="material-symbols-outlined text-[14px]">memory</span> Carga (CPU)
+            </span>
+            <span className={cpuColor.text}>{cpu.toFixed(0)}%</span>
+          </div>
+          <div className="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+            <div className={`h-1.5 rounded-full ${cpuColor.bar}`} style={{ width: `${Math.min(100, Math.max(0, cpu))}%` }}></div>
+          </div>
+        </div>
+
+        {/* RAM */}
+        <div>
+          <div className="flex justify-between font-caption-stats text-caption-stats mb-xs">
+            <span className="text-slate-muted flex items-center gap-xs">
+              <span className="material-symbols-outlined text-[14px]">save</span> Memoria
+            </span>
+            <span className={ramColor.text}>{memory.toFixed(0)}%</span>
+          </div>
+          <div className="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+            <div className={`h-1.5 rounded-full ${ramColor.bar}`} style={{ width: `${Math.min(100, Math.max(0, memory))}%` }}></div>
+          </div>
+        </div>
+
+        {/* Temperatura */}
+        <div>
+          <div className="flex justify-between font-caption-stats text-caption-stats mb-xs">
+            <span className="text-slate-muted flex items-center gap-xs">
+              <span className="material-symbols-outlined text-[14px]">thermostat</span> Temperatura
+            </span>
+            <span className={tempColor.text}>{temperature.toFixed(0)}°C</span>
+          </div>
+          <div className="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+            <div className={`h-1.5 rounded-full ${tempColor.bar}`} style={{ width: `${Math.min(100, Math.max(0, temperature))}%` }}></div>
           </div>
         </div>
       </div>
